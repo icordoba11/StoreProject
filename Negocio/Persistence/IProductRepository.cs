@@ -6,5 +6,6 @@ namespace Negocio.Persistence
     {
         void InsertProduct(Product product);
         Product SearchProduct();
+        List<Product> SearchProducts();
     }
 }

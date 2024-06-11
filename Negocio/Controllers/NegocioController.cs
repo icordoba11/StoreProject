@@ -36,9 +36,20 @@ namespace Negocio.Controllers
         public IActionResult SearchProduct()
         {
 
-            var product = _productService.SearchProduct();
+            var  product = _productService.SearchProduct();
+         
 
             return Ok(product);
+        }
+
+        [HttpGet("SearchProducts")]
+
+        public IActionResult SearchProducts()
+        {
+
+            List<Product> products = _productService.SearchProducts();
+
+            return Ok(products);
         }
 
     }
