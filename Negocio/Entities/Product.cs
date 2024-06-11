@@ -2,12 +2,12 @@
 {
     public class Product
     {
-        public int idProduct { get; set; }
-        public string name { get; set; }
-        public string description { get; set; }
-        public float price { get; set; }
-        public float actualStock { get; set; }
-        public DateTime creationDate { get; set; }
+        public int IdProduct { get; set; }
+        public string Nombre { get; set; }
+        public string ItemDescription { get; set; }
+        public float Price { get; set; }
+        public float ActualStock { get; set; }
+        public DateTime CreationDate { get; set; }
 
     }
 }

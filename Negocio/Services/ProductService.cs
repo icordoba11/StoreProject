@@ -29,20 +29,26 @@ namespace Negocio.Services
 
             return new Product
             {
-                idProduct = 1,
-                name = "pinza agarra huevos",
-                description = "pinza para agarrarse los huevos",
-                price = 17,
-                actualStock = 1,
-                creationDate = now
+
+                Nombre = "Sacacorchos",
+                ItemDescription = "Saca los corchos",
+                Price = 450,
+                ActualStock = 60,
+                CreationDate = now
             };
         }
 
         public Product SearchProduct()
         {
             var product = _productRepository.SearchProduct();
-          
+
             return product;
+        }
+        public List<Product> SearchProducts()
+        {
+            List<Product> products = _productRepository.SearchProducts();
+
+            return products;
         }
     }
 }

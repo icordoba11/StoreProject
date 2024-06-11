@@ -22,8 +22,8 @@ namespace Negocio.Persistence
                 Console.WriteLine("Ingresamos a la base de datos");
                 var now = DateTime.Now;
                 connection.Open();
-                string query = "INSERT INTO Productos (Id_producto, Nombre, Descripcion, Precio, Stock_actual, Fecha_creacion)" +
-                               "VALUES (@idProduct, @name, @description, @price, @actualStock, @creationDate)";
+                string query = "INSERT INTO Productos (Nombre, ItemDescription, Price, ActualStock, CreationDate)" +
+                               "VALUES (@Nombre, @ItemDescription, @Price, @ActualStock, @CreationDate)";
 
                 connection.Execute(query, product);
 
@@ -36,9 +36,21 @@ namespace Negocio.Persistence
             using (var connection = _connectionService.GetConnection())
             {
                 connection.Open();
-                string query = "SELECT * FROM Productos WHERE Id_producto = @ProductId";
-                var result = connection.QueryFirstOrDefault<Product>(query, new { ProductId = 1 });
-              
+                string query = "SELECT * FROM Productos WHERE Nombre = 'Laptop'";
+                var result = connection.QueryFirstOrDefault<Product>(query);
+                return result;
+
+            }
+
+        }
+        public List<Product> SearchProducts()
+        {
+            var test = 0;
+            using (var connection = _connectionService.GetConnection())
+            {
+                connection.Open();
+                string query = "SELECT * FROM Productos";
+                List<Product> result = connection.Query<Product>(query).ToList();
                 return result;
 
             }

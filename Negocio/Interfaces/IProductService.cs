@@ -6,5 +6,7 @@ namespace Negocio.Interfaces
     {
         Product CreateDefaultProduct();
         Product SearchProduct();
+
+        List<Product> SearchProducts();
     }
 }
