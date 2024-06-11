@@ -45,7 +45,6 @@ namespace Negocio.Persistence
         }
         public List<Product> SearchProducts()
         {
-            var test = 0;
             using (var connection = _connectionService.GetConnection())
             {
                 connection.Open();
